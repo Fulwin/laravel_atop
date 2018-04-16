@@ -1,14 +1,182 @@
-
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
-
+// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 // Variables
 @import "variables";
-
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+body {
+    font-family: Hiragino Sans GB, "Hiragino Sans GB", Helvetica, "Microsoft YaHei", Arial, sans-serif;
+}
 
 .navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+button {
+    outline: none !important;
+}
+
+span.gender {
+    font-weight: bold;
+}
+
+span.gender-boy {
+    color: $gender-boy;
+}
+
+span.gender-girl {
+    color: $gender-girl;
+}
+
+
+/* bootstrap alert组件关闭按钮错位修复 */
+
+.alert-dismissible .close span[aria-hidden="true"] {
+    position: relative;
+    top: -4px;
+}
+
+
+/* bootstrap 表格默认顶部对齐改为居中对齐 */
+
+.table tbody tr td,
+.table td {
+    vertical-align: middle;
+}
+
+
+/* bootstrap 下拉菜单字体变大问题改善 */
+
+.dropdown-menu {
+    font-size: inherit;
+}
+
+
+/* 固定checkbox每一项宽度 */
+
+.custom-control-inline-fixed-width {
+    width: 100px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+input::-webkit-input-placeholder,
+input:-ms-input-placeholder {
+    color: red;
+}
+
+
+/* 改善 material icons 图标库大小及错位问题 */
+
+.material-icons {
+    font-size: inherit;
+    position: relative;
+    top: 2px;
+    margin-right: 7px;
+}
+
+
+/* bootstrap 样式扩展 */
+
+.card .card-large-number {
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.logo {
+    height: 60px;
+    background-color: #63a8eb;
+    text-align: center;
+    line-height: 60px;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: $default-sidebar-color;
+    color: #fff;
+    overflow: hidden;
+    .menu-list {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        bottom: 0;
+        width: 220px;
+        overflow-y: scroll;
+        padding: 1rem 0;
+        dt {
+            margin: .5rem 0;
+            font-size: 14px;
+            font-weight: normal;
+            color: #759099;
+            user-select: none;
+            text-indent: 1rem;
+        }
+        dd {
+            text-indent: 1.2rem;
+            margin: 0;
+            height: 40px;
+            line-height: 40px;
+            &:hover {
+                background-color: #21282e;
+            }
+            a {
+                color: #759099;
+                text-decoration: none;
+                display: block;
+                .material-icons {
+                    font-size: 16px;
+                    margin-right: 7px;
+                    position: relative;
+                    top: 3px;
+                }
+                &:hover {
+                    color: #bbd9bb;
+                }
+            }
+        }
+    }
+    .copyright {
+        user-select: none;
+        font-size: 12px;
+        color: #759099;
+    }
+}
+
+.header {
+    height: 60px;
+    background-color: #fff;
+    color: $default-text-color;
+    border-bottom: solid 1px #dadadf;
+    padding: 10px 1rem;
+    .rounded-circle {
+        position: relative;
+        top: -3px;
+    }
+    .nav-link {
+        color: $default-text-color;
+        .material-icons {
+            font-size: 20px;
+        }
+    }
+    .nav-link:hover {
+        color: #007bff;
+    }
+    .breadcrumb {
+        padding: 0;
+        margin: 0;
+        background-color: inherit;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+.content {
+    padding: 1rem;
 }
