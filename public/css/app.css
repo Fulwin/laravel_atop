@@ -10423,11 +10423,6 @@ span.gender-girl {
 
 /* bootstrap alert组件关闭按钮错位修复 */
 
-.alert-dismissible .close span[aria-hidden="true"] {
-  position: relative;
-  top: -4px;
-}
-
 /* bootstrap 表格默认顶部对齐改为居中对齐 */
 
 .table tbody tr td,

@@ -13898,9 +13898,8 @@ var app = new Vue({
 
 /***/ }),
 /* 13 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
 window._ = __webpack_require__(14);
 window.Popper = __webpack_require__(3).default;
 /**

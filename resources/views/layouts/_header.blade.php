@@ -30,8 +30,8 @@
                     <span>{{ Auth::user()->name }} </span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">个人中心</a>
-                    <a class="dropdown-item" href="#">修改资料</a>
+                    <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">个人中心</a>
+                    <a class="dropdown-item" href="{{ route('users.edit', Auth::id()) }}">修改资料</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item logout" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">退出登录</a>
                     <form action="{{ route('logout') }}" method="POST" id="logout-form" class="sr-only">
