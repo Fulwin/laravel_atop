@@ -10423,6 +10423,12 @@ span.gender-girl {
 
 /* bootstrap alert组件关闭按钮错位修复 */
 
+/* bootstrap input[type=file] component 重定义input[type=file]组件右侧文字 */
+
+.custom-file-label::after {
+  content: '\6D4F\89C8';
+}
+
 /* bootstrap 表格默认顶部对齐改为居中对齐 */
 
 .table tbody tr td,

@@ -38,6 +38,13 @@ span.gender-girl {
 .alert-dismissible .close span[aria-hidden="true"] {}
 
 
+/* bootstrap input[type=file] component 重定义input[type=file]组件右侧文字 */
+
+.custom-file-label::after {
+    content: '浏览';
+}
+
+
 /* bootstrap 表格默认顶部对齐改为居中对齐 */
 
 .table tbody tr td,

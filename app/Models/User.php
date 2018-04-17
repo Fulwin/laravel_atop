@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'avatar', 'introduction', 'phone', 'gender', 'department_id', 'level_id', 'user_id', 'status'
     ];
 
     /**
@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function getGenderAttribute($value)
+    {
+        return $value ? '男' : '女';
+    }
+
+    public function getStatusAttribute($value)
+    {
+        return $value ? '正常' : '禁用';
+    }
 }

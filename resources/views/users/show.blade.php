@@ -2,6 +2,16 @@
 
 @section('title', $user->name . '的个人中心')
 
+@section('breadcrumb')
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ route('root') }}">首页</a></li>
+            <li class="breadcrumb-item"><a href="{{ route('users.index') }}">用户管理</a></li>
+            <li class="breadcrumb-item active" aria-current="page">个人中心</li>
+        </ol>
+    </nav>
+@stop
+
 @section('content')
 <div class="row">
 
@@ -12,11 +22,11 @@
                 <ul class="list-group list-group-flush mt-4 mb-0">
                     <li class="list-group-item">
                         <h4>个人简介</h4>
-                        <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
+                        <div>{{ $user->introduction ? : '该用户很懒，啥都没写' }}</div>
                     </li>
                     <li class="list-group-item">
                         <h4>注册于</h4>
-                        <div>January 01 1901</div>
+                        <div>{{ $user->created_at->diffForHumans() }}</div>
                     </li>
                 </ul>
             </div>

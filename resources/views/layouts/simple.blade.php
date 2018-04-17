@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 
-<body>
+<body style="margin: 0;">
 
     <div id="app" class="{{ route_class() }}-page">
 

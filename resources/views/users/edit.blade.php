@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '编辑用户')
+@section('title', '更新用户资料')
 
 @section('breadcrumb')
     <nav aria-label="breadcrumb">
@@ -80,9 +80,20 @@
                             </div>
                         </div>
 
+                        <div class="form-group row mb-4">
+                            <label for="staticIntroduction" class="col-md-2 col-form-label">头像</label>
+                            <div class="col-md-10">
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" name="avatar" id="staticAvatar">
+                                    <label class="custom-file-label" for="staticAvatar">选择头像文件...</label>
+                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-10 offset-md-2">
-                                <button type="submit" class="btn btn-primary">保存</button>
+                                <button type="submit" class="btn btn-primary">更新</button>
                                 <button type="reset" class="btn btn-secondary">重置</button>
                             </div>
                         </div>
