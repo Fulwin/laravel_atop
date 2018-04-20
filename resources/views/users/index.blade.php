@@ -30,8 +30,8 @@
                 <tr>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
-                    <td>{{ $user->gender }}</td>
-                    <td>{{ $user->status }}</td>
+                    <td>{{ $user->gender_text }}</td>
+                    <td>{{ $user->status_text }}</td>
                     <td>
                         <a href="{{ route('users.show', Auth::id()) }}" class="btn btn-sm btn-outline-success">查看</a>
                         <a href="{{ route('users.edit', Auth::id()) }}" class="btn btn-sm btn-outline-info">编辑</a>

@@ -18,6 +18,16 @@ class User extends Authenticatable
         'name', 'email', 'password', 'avatar', 'introduction', 'phone', 'gender', 'department_id', 'level_id', 'user_id', 'status'
     ];
 
+
+    /**
+     * Append fields
+     *
+     * @var array
+     */
+    public $appends = [
+        'gender_text', 'status_text'
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -27,13 +37,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function getGenderAttribute($value)
+    public function getStatusTextAttribute($value)
     {
-        return $value ? '男' : '女';
+        return $this->attributes['status'] ? '正常' : '禁用';
     }
 
-    public function getStatusAttribute($value)
+    public function getGenderTextAttribute()
     {
-        return $value ? '正常' : '禁用';
+        return $this->attributes['gender'] ? '男' : '女';
     }
 }

@@ -21,7 +21,7 @@
 
                     @include('common._error')
 
-                    <form action="{{ route('users.update', $user->id) }}" method="post">
+                    <form action="{{ route('users.update', $user->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -61,21 +61,46 @@
                             <label class="col-md-2 col-form-label">性别</label>
                             <div class="col-md-10">
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="staticBoy" name="gender" value="1" checked required>
+                                    <input type="radio" class="custom-control-input" id="staticBoy" name="gender" value="1" 
+                                    {{ old('gender') != '' ? ( old('gender') == '1' ? 'checked' : '' ) : ( $user->gender == '1' ? 'checked' : '' ) }} required>
                                     <label class="custom-control-label" for="staticBoy">男</label>
                                 </div>
                                 <div class="custom-control custom-radio custom-control-inline">
-                                    <input type="radio" class="custom-control-input" id="staticGirl" name="gender" value="0" required>
+                                    <input type="radio" class="custom-control-input" id="staticGirl" name="gender" value="0"
+                                    {{ old('gender') != '' ? ( old('gender') == '0' ? 'checked' : '' ) : ( $user->gender == '0' ? 'checked' : '' ) }} required>
                                     <label class="custom-control-label" for="staticGirl">女</label>
                                 </div>
                                 <small class="form-text text-muted">[必选] 选择用户性别</small>
                             </div>
                         </div>
 
+                        {{-- <div class="form-group row mb-4">
+                            <label class="col-md-2 col-form-label">职位</label>
+                            <div class="col-md-10">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="posts[]" value="1" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Check this custom checkbox1</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="posts[]" value="2" class="custom-control-input" id="customCheck2">
+                                        <label class="custom-control-label" for="customCheck2">Check this custom checkbox2</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="posts[]" value="3" class="custom-control-input" id="customCheck3">
+                                        <label class="custom-control-label" for="customCheck3">Check this custom checkbox3</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" name="posts[]" value="4" class="custom-control-input" id="customCheck4">
+                                        <label class="custom-control-label" for="customCheck4">Check this custom checkbox4</label>
+                                    </div>
+                                <small class="form-text text-muted">[必选] 选择用户职位(可多选)</small>
+                            </div>
+                        </div> --}}
+
                         <div class="form-group row mb-4">
                             <label for="staticIntroduction" class="col-md-2 col-form-label">个人简介</label>
                             <div class="col-md-10">
-                                <textarea class="form-control" id="staticIntroduction" rows="3" placeholder="个人简介">{{ old('introduction') ? old('introduction') : $user->introduction }}</textarea>
+                                <textarea class="form-control" name="introduction" id="staticIntroduction" rows="3" placeholder="个人简介">{{ old('introduction') ? old('introduction') : $user->introduction }}</textarea>
                                 <small class="form-text text-muted">[可选] 输入用户个人简介 / 签名 / 座右铭</small>
                             </div>
                         </div>
@@ -83,10 +108,8 @@
                         <div class="form-group row mb-4">
                             <label for="staticIntroduction" class="col-md-2 col-form-label">头像</label>
                             <div class="col-md-10">
-                                <div class="custom-file">
-                                    <input type="file" class="custom-file-input" name="avatar" id="staticAvatar">
-                                    <label class="custom-file-label" for="staticAvatar">选择头像文件...</label>
-                                    <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                <div class="form-group">
+                                    <input type="file" name="avatar" class="form-control-file" id="staticAvatar">
                                 </div>
                             </div>
                         </div>
